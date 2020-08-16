@@ -18,4 +18,4 @@ steps:
   env:
     secrectVar_Macro: $(secrectVar)
     secrectVar_CompileTime: ${{variables.secrectVar}}
-    secrectVar_Runtime: variables['secrectVar']
+    secrectVar_Runtime: $[ variables['secrectVar'] ]
