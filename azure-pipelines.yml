@@ -8,14 +8,19 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
+  
+variables:
+  secretVarCopy:  $[ variables['secrectVar'] ]
 
 steps:
 - pwsh: |      
     echo secrectVar_Macro       $env:secrectVar_Macro
     echo secrectVar_CompileTime $env:secrectVar_CompileTime
     echo secrectVar_Runtime     $env:secrectVar_Runtime
+    echo secretVarCopy          $env:secretVarCopy
 
   env:
     secrectVar_Macro: $(secrectVar)
     secrectVar_CompileTime: ${{variables.secrectVar}}
     secrectVar_Runtime: $[ variables['secrectVar'] ]
+    secretVarCopy: $(secretVarCopy)
