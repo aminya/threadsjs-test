@@ -11,9 +11,9 @@ pool:
 
 steps:
 - pwsh: |      
-    echo env:secrectVar_Macro
-    echo env:secrectVar_CompileTime
-    echo env:secrectVar_Runtime
+    echo $env:secrectVar_Macro
+    echo $env:secrectVar_CompileTime
+    echo $env:secrectVar_Runtime
 
   env:
     secrectVar_Macro: $(secrectVar)
