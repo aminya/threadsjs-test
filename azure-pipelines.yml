@@ -10,7 +10,7 @@ pool:
   vmImage: 'ubuntu-latest'
   
 variables:
-  secretVarCopy:  $[ variables['secrectVar'] ]
+  secrectVar:  $[ variables['secrectVar'] ]
 
 steps:
 - pwsh: |      
@@ -23,4 +23,4 @@ steps:
     secrectVar_Macro: $(secrectVar)
     secrectVar_CompileTime: ${{variables.secrectVar}}
     secrectVar_Runtime: $[ variables['secrectVar'] ]
-    secretVarCopy: $(secretVarCopy)
+    secretVarCopy: $(secrectVar)
