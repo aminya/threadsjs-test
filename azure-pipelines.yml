@@ -11,7 +11,7 @@ pool:
   
 # Does not work without this:
 variables:
-  secrectVarCopy: $[ variables['secretVar'] ]
+  secrectVar: $[ variables['secretVar'] ]
 
 steps:
 - pwsh: |      
@@ -20,6 +20,6 @@ steps:
     echo secrectVar_Runtime       $env:secrectVar_Runtime
 
   env:
-    secrectVar_Macro: $(secrectVarCopy)
-    secrectVar_CompileTime: ${{variables.secrectVarCopy}}
-    secrectVar_Runtime: $[ variables['secrectVarCopy'] ]
+    secrectVar_Macro: $(secrectVar)
+    secrectVar_CompileTime: ${{variables.secrectVar}}
+    secrectVar_Runtime: $[ variables['secrectVar'] ]
