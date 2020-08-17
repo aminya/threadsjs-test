@@ -10,8 +10,8 @@ pool:
   vmImage: 'ubuntu-latest'
   
 # Does not work without this:
-# variables:
-  # secrectVar:  $[ variables['secrectVar'] ]
+variables:
+  secrectVar:  $[ variables['secrectVar'] ]
 
 steps:
 - pwsh: |      
