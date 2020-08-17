@@ -1,1 +1,1 @@
-console.log(process.env.secrectVar_Macro)
+console.log(`node: ${process.env.secrectVar_Macro}`)
