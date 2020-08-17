@@ -15,14 +15,7 @@ variables:
 
 steps:
 - pwsh: |     
-    echo secrectVar_Macro         $env:secrectVar_Macro
-    echo secrectVar_CompileTime   $env:secrectVar_CompileTime
-    echo secrectVar_Runtime       $env:secrectVar_Runtime
-
     node test.js
-
 
   env:
     secrectVar_Macro: $(secrectVar)
-    secrectVar_CompileTime: ${{variables.secrectVar}}
-    secrectVar_Runtime: $[ variables['secrectVar'] ]
