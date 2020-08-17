@@ -11,13 +11,13 @@ pool:
   
 # Does not work without this:
 variables:
-  secrectVar:  $[ variables['secrectVar'] ]
+  secrectVar:  $[ variables['secrectVar'] or '' ]
 
 steps:
 - pwsh: |      
-    echo secrectVar_Macro       $env:secrectVar_Macro
-    echo secrectVar_CompileTime $env:secrectVar_CompileTime
-    echo secrectVar_Runtime     $env:secrectVar_Runtime
+    echo secrectVar_Macro         $env:secrectVar_Macro
+    echo secrectVar_CompileTime   $env:secrectVar_CompileTime
+    echo secrectVar_Runtime       $env:secrectVar_Runtime
 
   env:
     secrectVar_Macro: $(secrectVar)
