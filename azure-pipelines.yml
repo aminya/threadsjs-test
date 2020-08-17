@@ -11,11 +11,11 @@ pool:
   
 # Does not work without this:
 variables:
-  secrectVarCopy: $[ variables['secretVar'] ]
+  secretVar: $[ variables['secretVar'] ]
 
 steps:
 - pwsh: |     
     node test.js
 
   env:
-    secrectVar_Macro: $(secrectVarCopy)
+    secrectVar_Macro: $(secretVar)
