@@ -11,7 +11,7 @@ pool:
   
 # Does not work without this:
 variables:
-  secrectVar: ${{ replace(  's', 'variables[\'secrectVar\']', '' ) }}
+  secrectVar: ${{ 'variables[\'secrectVar\']' }}
 
 steps:
 - pwsh: |      
